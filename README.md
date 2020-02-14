@@ -17,7 +17,7 @@ You have three hours to complete this challenge. Plan your time accordingly.
 Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager.
 
 ## Description
-
+-
 This sprint challenge is divided up into three parts:  Hash tables coding, blockchain coding, and a short interview covering parts of hash tables and blockchain.
 
 ## Interview Questions
