@@ -17,18 +17,38 @@ You have three hours to complete this challenge. Plan your time accordingly.
 Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons and your project manager.
 
 ## Description
-
+-
 This sprint challenge is divided up into three parts:  Hash tables coding, blockchain coding, and a short interview covering parts of hash tables and blockchain.
 
 ## Interview Questions
 
 Explain in detail the workings of a dynamic array:
+
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+    -Average runtime to access an array would be O(1)
+    -Adding or deleting from the front would be an average of O(n) since you have to shift all of the other elements over
+    - Removing from the back would also have O(1)
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+    - Worst case would be O(n) We have to allocate space, & transfer over everything.
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+ - BlockChains Have
+    - Index
+    - TImestamp - This isnt always used,
+    - Transactions 
+    - proof
+    - and the hash of the previous block
+
+    -The Chain contains all of the transactions that have been recorded. these records are available to the public
+
+    -
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+    - proof of work is a piece of data that is timecostly to produce but easy for others to verify. basically if you want to cheat the system, you'll have to work really hard to get it. 
+    - It deters DOS and spam attacks by requiring the computer to do some heavy lifting.
+    - Someone could always steal your wallet if it isnt offline. as was the case not to long ago
+
 
 ## Project Set Up
 
