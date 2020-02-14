@@ -24,10 +24,11 @@ def proof_of_work(last_proof):
 
     print("Searching for next proof")
     proof = 0
-    #  TODO: Your code here
+    proof_hash = hashlib.sha256(proof).hexdigest() 
+
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
-    return proof
+    return guess_hash[:6] == "000000"
 
 
 def valid_proof(last_hash, proof):
