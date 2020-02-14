@@ -9,11 +9,12 @@ from hashtables import (HashTable,
 def get_indices_of_item_weights(weights, length, limit):
     ht = HashTable(16)
 
-    """
-    YOUR CODE HERE
-    """
+    # PRoblem: find two items that add up to the limit weight.
+    print(f"length: {length} \n")
 
-    return None
+    if (length <= 1):
+        return None
+    
 
 
 def print_answer(answer):

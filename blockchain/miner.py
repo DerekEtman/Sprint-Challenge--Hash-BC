@@ -2,6 +2,7 @@ import hashlib
 import requests
 
 import sys
+import json
 
 from uuid import uuid4
 
@@ -20,15 +21,26 @@ def proof_of_work(last_proof):
     - Use the same method to generate SHA-256 hashes as the examples in class
     """
 
+    # Problem : We want to generate a new hash and compare the last 6 digits to the last 6 digits of the previous hash
+    # Store previous hash.
+    #  
+
     start = timer()
+    print(f"last Proof: {last_proof}")
 
     print("Searching for next proof")
+    block_string = json.dumps(last_proof, sort_keys=True).encode()
+    print(f"block_string: {block_string}")
+
     proof = 0
-    proof_hash = hashlib.sha256(proof).hexdigest() 
+
+
+    while not valid_proof(block_string, proof):
+        proof += 1
+    return proof
 
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
-    return guess_hash[:6] == "000000"
 
 
 def valid_proof(last_hash, proof):
@@ -40,8 +52,11 @@ def valid_proof(last_hash, proof):
     IE:  last_hash: ...AE9123456, new hash 123456E88...
     """
 
-    # TODO: Your code here!
-    pass
+    print(f"valid_proof: \n last_hash: {last_hash} \n proof: {proof}")
+    guess = f"{last_hash}{proof}".encode()
+    guess_hash = hashlib.sha256(proof).hexdigest
+
+    return guess_hash[:6] == "000000"
 
 
 if __name__ == '__main__':
