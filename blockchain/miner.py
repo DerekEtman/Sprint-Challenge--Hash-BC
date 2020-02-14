@@ -38,7 +38,7 @@ def proof_of_work(last_proof):
         counter += 1
 
         if counter == 1000000:
-            print(f"currently at: {counter}")
+            print(f"Mining.")
             if requests.get(url=node + "/last_proof").json()["proof"] != last_proof:
                 print(f"already taken")
                 counter = 0

@@ -10,10 +10,21 @@ def get_indices_of_item_weights(weights, length, limit):
     ht = HashTable(16)
 
     # PRoblem: find two items that add up to the limit weight.
-    print(f"length: {length} \n")
+    # print(f"{len(weights)}")
+    # 
+    for i in range(length):
+        pairs = hash_table_retrieve(ht, weights[i])
+        # print(f"pairs: {pairs}")
 
-    if (length <= 1):
-        return None
+        if pairs is None:
+            hash_table_insert(ht, limit - weights[i], i)
+        else:
+            return (i, pairs)
+
+    return None
+
+    # if (length <= 1):
+    #     return None
     
 
 
